@@ -233,7 +233,7 @@ class CollisionManager {
 				}
 			}
 			// Test against ship
-			hit = this.tstHit({objA:sPt, objB:ePt, radius:40});
+			hit = this.tstHit({objA:sPt, objB:ePt, radius:ship.shieldRadius});
 			if(hit) {
 				this.eS.killSprite(i);
 				this.ship.takeDamage(1);
@@ -266,6 +266,7 @@ let ship = {
 	dl:0,
 	dead:false,
 	health:0,
+	shieldRadius:40,
 	aF:{
 		status: true,
 		state: 0, // 0/1
@@ -572,10 +573,11 @@ class Ship {
 		this.sprite.draw();
 		this.rocketFlames.draw();
 		
+		ship.shieldRadius = ship.health > 1 ? 71 - ((maxShipHealth - ship.health) * 3) : 40;
 		if(ship.health > 1){
 			ctx.strokeStyle = glows.colours[ship.dl];
 			ctx.beginPath();
-			ctx.arc(this.sprite.x, this.sprite.y, 102 * .7 - ((maxShipHealth - ship.health) * 3), -this.tik, Tau - this.tik);
+			ctx.arc(this.sprite.x, this.sprite.y, ship.shieldRadius, -this.tik, Tau - this.tik);
 			ctx.stroke();
 		}
 
