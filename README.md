@@ -7,7 +7,7 @@ http://js13kgames.com
 - The Skulls have different power levels indicated by colour - ie they cause more damage and take more hits to die.
 - The ship only has one bullet. And it's possible to miss all enemies, so the player does best by fighting close, moving fast, and shooting accurately.
 - The ship is shielded, and can ram Skulls. But this causes damage, shown by shield size and colour.  
-- The player gains powerups overtime. The shield gets stronger and the ships becomes more maneuverable.
+- The player gains powerups overtime. The shield gets stronger and the ships becomes more manoeuvrable.
 	- Ideally this would be on-screen targets, but I ran out of time...
 ## Technical Approach
 - Hand-drawn graphics - I wanted to try for this texture within the size constraints. Coloured shadow effects are used to create visual difference / interest
